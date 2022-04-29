@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../Components/icon_info.dart';
 import '../Components/sun_widget.dart';
+import '../Components/today_stats.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: const Color(0XFF03070B),
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
@@ -26,15 +28,15 @@ class HomeScreen extends StatelessWidget {
                         'San Fransisco',
                         style: GoogleFonts.jost(
                           fontSize: 25,
-                          textStyle: const TextStyle(color: Colors.pinkAccent),
+                          textStyle:
+                              const TextStyle(color: Colors.lightBlueAccent),
                         ),
                       ),
                       Text(
                         '18°',
                         style: GoogleFonts.jost(
                           fontSize: 75,
-                          textStyle:
-                              const TextStyle(color: Colors.lightBlueAccent),
+                          textStyle: const TextStyle(color: Colors.white),
                         ),
                       ),
                       Container(
@@ -105,6 +107,29 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+              child: Text(
+                'Today',
+                style: GoogleFonts.jost(
+                  fontSize: 17,
+                  textStyle: const TextStyle(color: Colors.grey),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  TodayStats(),
+                  TodayStats(),
+                  TodayStats(),
+                  TodayStats(),
+                  TodayStats(),
+                ],
+              ),
+            )
           ],
         ),
       ),
