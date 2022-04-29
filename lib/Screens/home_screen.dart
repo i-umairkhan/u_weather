@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -9,47 +10,51 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: const Color(0XFF03070B),
       body: SafeArea(
         child: Column(children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 30),
-                child: Column(
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Column(
                   children: [
-                    const Text(
+                    Text(
                       'San Fransisco',
-                      style: TextStyle(fontSize: 20, color: Colors.grey),
+                      style: GoogleFonts.jost(
+                        fontSize: 20,
+                        textStyle: const TextStyle(color: Colors.grey),
+                      ),
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      '18',
-                      style: TextStyle(fontSize: 75),
-                    ),
-                    const SizedBox(
-                      height: 10,
+                    Text(
+                      '18°',
+                      style: GoogleFonts.jost(
+                        fontSize: 75,
+                        textStyle: const TextStyle(color: Colors.white),
+                      ),
                     ),
                     Container(
                       padding: const EdgeInsets.symmetric(
                           vertical: 10, horizontal: 15),
                       decoration: BoxDecoration(
                         color: const Color(0xDD353361),
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(23),
                       ),
-                      child: const Text(
+                      child: Text(
                         'Cloudy',
-                        style: TextStyle(fontWeight: FontWeight.w300),
+                        style: GoogleFonts.jost(
+                          fontSize: 15,
+                          textStyle: const TextStyle(color: Colors.white),
+                        ),
                       ),
                     )
                   ],
                 ),
-              ),
-              Image.asset(
-                'images/cloudy.png',
-                width: 180,
-              ),
-            ],
+                Image.asset(
+                  'images/cloudy.png',
+                  width: 180,
+                ),
+              ],
+            ),
           )
         ]),
       ),
