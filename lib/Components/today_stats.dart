@@ -3,8 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 
 class TodayStats extends StatelessWidget {
   const TodayStats({
+    required this.time,
+    required this.tempreture,
     Key? key,
   }) : super(key: key);
+
+  final String time;
+  final String tempreture;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +17,7 @@ class TodayStats extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          '10AM',
+          time,
           style: GoogleFonts.jost(
             fontSize: 15,
             textStyle: const TextStyle(color: Colors.white),
@@ -29,7 +34,7 @@ class TodayStats extends StatelessWidget {
           height: 5,
         ),
         Text(
-          '19°',
+          tempreture,
           style: GoogleFonts.jost(
             fontSize: 15,
             textStyle: const TextStyle(color: Colors.white),

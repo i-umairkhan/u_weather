@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../Components/icon_info.dart';
 import '../Components/sun_widget.dart';
 import '../Components/today_stats.dart';
+import '../Components/weekly_stats.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -122,14 +123,62 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
-                  TodayStats(),
-                  TodayStats(),
-                  TodayStats(),
-                  TodayStats(),
-                  TodayStats(),
+                  TodayStats(
+                    time: '10AM',
+                    tempreture: '19°',
+                  ),
+                  TodayStats(
+                    time: '11AM',
+                    tempreture: '17°',
+                  ),
+                  TodayStats(
+                    time: '12PM',
+                    tempreture: '17°',
+                  ),
+                  TodayStats(
+                    time: '01PM',
+                    tempreture: '20°',
+                  ),
                 ],
               ),
-            )
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+              child: Text(
+                'Weekly',
+                style: GoogleFonts.jost(
+                  fontSize: 17,
+                  textStyle: const TextStyle(color: Colors.grey),
+                ),
+              ),
+            ),
+            Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: const [
+                    WeeklyStats(
+                      day: 'MON',
+                      temprature: '18° - 16°',
+                    ),
+                    WeeklyStats(
+                      day: 'TUE',
+                      temprature: '20° - 18°',
+                    ),
+                    WeeklyStats(
+                      day: 'WED',
+                      temprature: '22° - 20°',
+                    ),
+                    WeeklyStats(
+                      day: 'THU',
+                      temprature: '18° - 17°',
+                    ),
+                  ],
+                ))
           ],
         ),
       ),
