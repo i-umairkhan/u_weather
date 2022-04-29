@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../Components/icon_info.dart';
+import '../Components/sun_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -68,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                     text: '13%',
                   ),
                   IconInfo(
-                    ico: Icons.fax,
+                    ico: Icons.line_axis_rounded,
                     text: '0.533mBar',
                   ),
                   IconInfo(
@@ -78,7 +79,8 @@ class HomeScreen extends StatelessWidget {
                   // IconInfo(),
                 ],
               ),
-            )
+            ),
+            const SunWidget()
           ],
         ),
       ),
