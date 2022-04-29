@@ -3,24 +3,30 @@ import 'package:google_fonts/google_fonts.dart';
 
 class IconInfo extends StatelessWidget {
   const IconInfo({
+    required this.ico,
+    required this.text,
     Key? key,
   }) : super(key: key);
+
+  final IconData ico;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Icon(
-          Icons.eco,
-          color: Color.fromARGB(255, 32, 107, 168),
+        Icon(
+          ico,
+          size: 20,
+          color: const Color.fromARGB(255, 32, 107, 168),
         ),
         const SizedBox(
           width: 5,
         ),
         Text(
-          '13%',
+          text,
           style: GoogleFonts.jost(
-            fontSize: 20,
+            fontSize: 15,
             textStyle: const TextStyle(color: Colors.white),
           ),
         )

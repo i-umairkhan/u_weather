@@ -63,9 +63,19 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
-                  IconInfo(),
-                  IconInfo(),
-                  IconInfo(),
+                  IconInfo(
+                    ico: Icons.cloud,
+                    text: '13%',
+                  ),
+                  IconInfo(
+                    ico: Icons.fax,
+                    text: '0.533mBar',
+                  ),
+                  IconInfo(
+                    ico: Icons.air,
+                    text: '9km/h',
+                  ),
+                  // IconInfo(),
                 ],
               ),
             )
