@@ -20,26 +20,28 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'San Fransisco',
                         style: GoogleFonts.jost(
                           fontSize: 25,
-                          textStyle: const TextStyle(color: Colors.white),
+                          textStyle: const TextStyle(color: Colors.pinkAccent),
                         ),
                       ),
                       Text(
                         '18°',
                         style: GoogleFonts.jost(
                           fontSize: 75,
-                          textStyle: const TextStyle(color: Colors.white),
+                          textStyle:
+                              const TextStyle(color: Colors.lightBlueAccent),
                         ),
                       ),
                       Container(
                         padding: const EdgeInsets.symmetric(
                             vertical: 10, horizontal: 15),
                         decoration: BoxDecoration(
-                          color: const Color(0xDD353361),
+                          color: Colors.pinkAccent,
                           borderRadius: BorderRadius.circular(23),
                         ),
                         child: Text(
@@ -69,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                     text: '13%',
                   ),
                   IconInfo(
-                    ico: Icons.line_axis_rounded,
+                    ico: Icons.linear_scale,
                     text: '0.533mBar',
                   ),
                   IconInfo(
@@ -80,7 +82,29 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SunWidget()
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const SunWidget(
+                  time: '07:00 AM',
+                  colors: [
+                    Color.fromARGB(255, 255, 248, 181),
+                    Color.fromARGB(255, 255, 147, 97)
+                  ],
+                ),
+                Container(
+                  width: 70,
+                  height: 1,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.rectangle,
+                      color: Color.fromARGB(255, 75, 75, 75)),
+                ),
+                const SunWidget(
+                  time: '06:00 PM',
+                  colors: [Color.fromRGBO(255, 231, 95, 1), Colors.pink],
+                ),
+              ],
+            ),
           ],
         ),
       ),

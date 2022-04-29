@@ -18,7 +18,7 @@ class IconInfo extends StatelessWidget {
         Icon(
           ico,
           size: 20,
-          color: const Color.fromARGB(255, 32, 107, 168),
+          color: Colors.blueAccent,
         ),
         const SizedBox(
           width: 5,

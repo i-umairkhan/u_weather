@@ -3,34 +3,36 @@ import 'package:flutter/material.dart';
 
 class SunWidget extends StatelessWidget {
   const SunWidget({
+    required this.colors,
+    required this.time,
     Key? key,
   }) : super(key: key);
+
+  final String time;
+  final List<Color> colors;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
       child: Row(
         children: [
           Container(
-            width: 30,
-            height: 30,
+            width: 25,
+            height: 25,
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 5,
-                  blurRadius: 7,
+                  spreadRadius: 3,
+                  blurRadius: 4,
                   offset: const Offset(0, 0),
                 ),
               ],
-              gradient: const LinearGradient(
+              gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomLeft,
-                  colors: [
-                    Color.fromARGB(255, 255, 170, 164),
-                    Color.fromARGB(255, 223, 68, 119)
-                  ]),
+                  colors: colors),
               shape: BoxShape.circle,
             ),
           ),
@@ -38,9 +40,9 @@ class SunWidget extends StatelessWidget {
             width: 10,
           ),
           Text(
-            '07:00 AM',
+            time,
             style: GoogleFonts.jost(
-              fontSize: 15,
+              fontSize: 13,
               textStyle: const TextStyle(color: Colors.white),
             ),
           )
